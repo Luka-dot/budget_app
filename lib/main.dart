@@ -19,7 +19,7 @@ class MyHomePage extends StatelessWidget {
     Transaction(
       id: 't1',
       title: 'gas',
-      amount: 44.30,
+      amount: 44.33,
       date: DateTime.now(),
     ),
     Transaction(
@@ -51,7 +51,28 @@ class MyHomePage extends StatelessWidget {
           Column(
             children: transactions.map((tx) {
               return Card(
-                child: (Text(tx.title)),
+                child: Row(
+                  children: [
+                    Container(
+                      child: Text(
+                        tx.amount.toString(),
+                      ),
+                      margin: EdgeInsets.all(5.0),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey, width: 2.0),
+                      ),
+                      padding: EdgeInsets.all(10.0),
+                    ),
+                    Column(
+                      children: [
+                        Text(tx.title),
+                        Text(
+                          tx.date.toString(),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               );
             }).toList(),
           ),
