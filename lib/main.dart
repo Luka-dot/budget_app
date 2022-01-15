@@ -54,7 +54,11 @@ class _MyHomePageState extends State<MyHomePage> {
     showModalBottomSheet(
       context: ctx,
       builder: (_) {
-        return NewTransaction(_addTransaction);
+        return GestureDetector(
+          onTap: () {},
+          child: NewTransaction(_addTransaction),
+          behavior: HitTestBehavior.opaque,
+        );
       },
     );
   }
@@ -65,7 +69,9 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text('Flutter App'),
         actions: [
-          IconButton(onPressed: () => {}, icon: Icon(Icons.add)),
+          IconButton(
+              onPressed: () => _startAddNewTransaction(context),
+              icon: Icon(Icons.add)),
         ],
       ),
       body: SingleChildScrollView(
