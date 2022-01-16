@@ -14,31 +14,25 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Expense Tracker',
       theme: ThemeData(
-        fontFamily: 'OpenSans',
-        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.deepOrange)
-            .copyWith(secondary: Colors.redAccent),
-        appBarTheme: AppBarTheme(
-          toolbarTextStyle: ThemeData.light()
-              .textTheme
-              .copyWith(
-                headline6: TextStyle(
+          primarySwatch: Colors.teal,
+          accentColor: Colors.blueGrey,
+          fontFamily: 'Quicksand',
+          textTheme: ThemeData.light().textTheme.copyWith(
+                subtitle2: TextStyle(
                   fontFamily: 'OpenSans',
-                  fontSize: 20,
                   fontWeight: FontWeight.bold,
+                  fontSize: 18,
                 ),
-              )
-              .bodyText2,
-          titleTextStyle: ThemeData.light()
-              .textTheme
-              .copyWith(
-                headline6: TextStyle(
-                  fontFamily: 'OpenSans',
-                  fontSize: 20,
+              ),
+          appBarTheme: AppBarTheme(
+            textTheme: ThemeData.light().textTheme.copyWith(
+                  subtitle2: TextStyle(
+                    fontFamily: 'OpenSans',
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              )
-              .headline6,
-        ),
-      ),
+          )),
       home: MyHomePage(),
     );
   }
